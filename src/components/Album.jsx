@@ -57,7 +57,7 @@ export default function Album() {
                     <figcaption>
                       <a
                         className="btn btn-sm venobox"
-                        data-fancybox="gallery"
+                        data-fancybox="my_album"
                         href={item}
                       >
                         <i className="flaticon-plus-symbol" />

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import Album from "./components/Album";
 import Couple from "./components/Couple";
@@ -6,10 +7,27 @@ import Events from "./components/Events";
 import HomeBanner from "./components/HomeBanner";
 import SectionAccessible from "./components/SectionAccessible";
 import SectionHero from "./components/SectionHero";
+import HeartLoading from "./components/HeartLoading";
+import { FadeIn } from "./components/FadeIn";
+
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, [loading]);
+
+  if (loading) {
+    return (
+      <div className="loader">
+        <HeartLoading />
+      </div>
+    );
+  }
   return (
-    <div>
-      {/* <div className="fakeLoader"></div> */}
+    <FadeIn>
       <section className="menu-section-area">
         <nav
           className="navbar navbar-expand-lg fixed-top d-none d-sm-none d-md-block d-lg-block d-xl-block"
@@ -96,7 +114,7 @@ function App() {
           Thanks for watching. I would be delighted if you attended my wedding!
         </span>
       </div>
-    </div>
+    </FadeIn>
   );
 }
 
