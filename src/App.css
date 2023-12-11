@@ -1,0 +1,41 @@
+.bii-footer,
+.bii-logo {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+.my-banner {
+  /* background-image: url("https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/templates/6174ee5134c46827c45a50e5/b47ed1f74b4ec8044bda41dee48cadac.jpg"); */
+}
+.row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.my-hero {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 8px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+}
+.footer .fa-heart {
+  color: #df4758;
+}
