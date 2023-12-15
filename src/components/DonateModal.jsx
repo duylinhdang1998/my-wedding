@@ -1,6 +1,15 @@
 export default function DonateModal() {
   return (
-    <div id="donate-modal" className="donate-modal">
+    <div
+      id="donate-modal"
+      className="donate-modal"
+      style={{
+        backgroundColor: "#fff",
+        maxWidth: 500,
+        padding: 20,
+        margin: 10,
+      }}
+    >
       <div className="donate-modal-content">
         <div className="donate-modal-header">
           <span className="donate-modal-close">×</span>

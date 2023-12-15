@@ -2,7 +2,7 @@ import ReactWOW from "react-wow";
 
 export default function Couple() {
   return (
-    <ReactWOW animation="bounceInUp" delay="1s" duration="2s">
+    <ReactWOW animation="bounceInUp" delay="0.5s" duration="0.5s">
       <section className="bride-groom-area" id="couple">
         <div className="container">
           <div className="row">

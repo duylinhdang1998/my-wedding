@@ -6,7 +6,8 @@ export default function HomeBanner() {
     <ReactWOW animation="fadeIn" delay="1s">
       <Parallax
         bgImage="https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/templates/6174ee5134c46827c45a50e5/b47ed1f74b4ec8044bda41dee48cadac.jpg"
-        strength={500}
+        strength={50}
+        lazy
       >
         <header className="home-banner-area" id="home">
           <section className="hero-area zoom-burns position-relative">
