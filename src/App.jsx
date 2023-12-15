@@ -109,10 +109,10 @@ function App() {
       <Album />
       <div className="footer">
         <i className="fa fa-heart"></i>
-        <span>Thanks for watching!</span>
-        <span>
-          Thanks for watching. I would be delighted if you attended my wedding!
+        <span style={{ textAlign: "center" }}>
+          Thanks for watching. Hope to see you in our wedding
         </span>
+        <i className="fa fa-heart"></i>
       </div>
     </FadeIn>
   );

@@ -1,78 +1,79 @@
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Fancybox from "./FancyBox";
-import ReactWOW from "react-wow";
+import Masonry from "./Masonry";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
-const images = [
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/657721767dd78abd0a003826/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/657721767dd78abd0a003826/large.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/657721409543de007109cde8/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/657721475c9a1251b1076671/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/6577214ba6c36b38ef04a643/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/6577214e960b5b6d8107c12d/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/6577215511af9fd23e05140e/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/657721598381245fbe006210/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/6577215c9543de007109cde9/small.jpg",
-  "https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/galleries/65772152e45cff73fb012a0f/small.jpg",
-];
+// import optional lightbox plugins
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { useState } from "react";
+
+const images2 = import.meta.glob(`/public/img/album_mini` + "/*");
+const imageList = Object.entries(images2).map(([path]) => {
+  return {
+    src: path,
+  };
+});
+
 export default function Album() {
+  const [index, setIndex] = useState(-1);
+
   return (
-    <ReactWOW animation="fadeInUp" delay="0.5s" duration="0.5s">
-      <section className="our-gallery-area" id="gallery">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 text-center">
-              <h2 className="section-heading">Album Hình Cưới</h2>
-              <img
-                className="heading-divider"
-                src="https://linhtrang98.iwedding.info/templates/template5/img/divider.png"
-                alt="divider"
-              />
-              <h3 className="section-subheading mb-2">
-                Tôi có thể chinh phục thế giới bằng một tay miễn là bạn đang nắm
-                tay kia.
-              </h3>
-            </div>
+    <section className="our-gallery-area" id="gallery">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 text-center">
+            <h2 className="section-heading">Album Hình Cưới</h2>
+            <img
+              className="heading-divider"
+              src="https://linhtrang98.iwedding.info/templates/template5/img/divider.png"
+              alt="divider"
+            />
+            <h3 className="section-subheading mb-2">
+              Tôi có thể chinh phục thế giới bằng một tay miễn là bạn đang nắm
+              tay kia.
+            </h3>
           </div>
-          <Fancybox
-            options={{
-              Carousel: {
-                infinite: false,
-              },
-            }}
-          >
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-              style={{ marginTop: 20 }}
-            >
-              <Masonry gutter="20px">
-                {images.map((item) => (
-                  <div
-                    key={item}
-                    className="gallery-box position-relative hover-wrapper"
-                  >
-                    <figure className="story-photo-box position-relative">
-                      <img
-                        src={item}
-                        alt="gallery"
-                        className="img-fluid w-100 d-block"
-                      />
-                      <figcaption>
-                        <a
-                          className="btn btn-sm venobox"
-                          data-fancybox="my_album"
-                          href={item}
-                        >
-                          <i className="flaticon-plus-symbol" />
-                        </a>
-                      </figcaption>
-                    </figure>
-                  </div>
-                ))}
-              </Masonry>
-            </ResponsiveMasonry>
-          </Fancybox>
         </div>
-      </section>
-    </ReactWOW>
+
+        <Masonry columnCount={3} columnGap={15} columnWidth={200}>
+          {imageList.map((item, index) => (
+            <div
+              key={item.src + index.toString()}
+              className="gallery-box position-relative hover-wrapper"
+            >
+              <figure className="story-photo-box position-relative">
+                <img
+                  src={item.src}
+                  loading="lazy"
+                  alt="gallery"
+                  className="img-fluid w-100 d-block"
+                />
+                <figcaption>
+                  <div
+                    className="btn btn-sm venobox"
+                    onClick={() => {
+                      setIndex(index);
+                    }}
+                  >
+                    <i className="flaticon-plus-symbol" />
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          ))}
+        </Masonry>
+      </div>
+      <Lightbox
+        slides={imageList}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        // enable optional lightbox plugins
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+      />
+    </section>
   );
 }
