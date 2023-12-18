@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
 }
 .my-banner {
-  /* background-image: url("https://cdn.biihappy.com/ziiweb/website/6566150839522b8984075372/templates/6174ee5134c46827c45a50e5/b47ed1f74b4ec8044bda41dee48cadac.jpg"); */
+  background-image: url("/img/LVT06663.jpg");
 }
 .loader {
   height: 100vh;
@@ -27,7 +27,7 @@ body {
   gap: 4px;
 }
 .my-hero {
-  height: 600px;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,4 +192,17 @@ body {
     transform: scale(1);
     -webkit-transform: scale(1);
   }
+}
+.custom-bg {
+}
+
+.my-video {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0;
+}
+.video-content {
+  margin-top: 50px;
 }

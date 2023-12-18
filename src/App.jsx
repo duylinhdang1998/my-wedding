@@ -103,7 +103,26 @@ function App() {
       <HomeBanner />
       <Couple />
       <SectionAccessible />
+      <div className="my-video">
+        <h2 className="section-heading">Video của chúng mình</h2>
+        <img
+          className="heading-divider"
+          src="https://linhtrang98.iwedding.info/templates/template5/img/divider.png"
+          alt="divider"
+        />
+        <div className="video-content">
+          <iframe
+            width="1000px"
+            height="500px"
+            src="https://www.youtube.com/embed/AlT_TbXiNiY?si=Y2N9_Z9f9Ezgv_ap"
+            frameBorder="1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
       <Events />
+
       <SectionHero />
       <DonateModal />
       <Album />

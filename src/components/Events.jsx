@@ -30,11 +30,14 @@ export default function Events() {
                 <ul>
                   <li>
                     <i className="far fa-clock" aria-hidden="true" />
-                    07:30 AM 10/02/2023
+                    01:30 PM 01/01/2024
                   </li>
                   <li>
-                    <i className="fa fa-map-marker" />
-                    370 Đường 02 tháng 9, Quận Hải Châu, Đà Nẵng
+                    <i
+                      className="fa fa-map-marker"
+                      style={{ paddingRight: 4 }}
+                    />
+                    Chợ Bảo Lộc, phường Thanh Châu, Phủ Lý, Hà Nam
                   </li>
                 </ul>
               </div>
@@ -53,11 +56,14 @@ export default function Events() {
                 <ul>
                   <li>
                     <i className="far fa-clock" aria-hidden="true" />
-                    11:30 AM 10/02/2023
+                    10:00 AM 01/01/2024
                   </li>
                   <li>
-                    <i className="fa fa-map-marker" />
-                    187 Hà Huy Tập, P. Hoà Khê, Quận Thanh Khê, Đà Nẵng
+                    <i
+                      className="fa fa-map-marker"
+                      style={{ paddingRight: 4 }}
+                    />
+                    Chợ Bảo Lộc, phường Thanh Châu, TP Phủ Lý, Hà Nam
                   </li>
                 </ul>
               </div>
@@ -84,8 +90,8 @@ export default function Events() {
                       style={{ paddingRight: 4 }}
                     />
                     <span>
-                      25 Trần Hưng Đạo, TDP Nam Cao, TT Vĩnh Trụ, Huyện Lý Nhân,
-                      Tỉnh Hà Nam
+                      25 Trần Hưng Đạo, TDP Nam Cao, TT Vĩnh Trụ, Lý Nhân, Hà
+                      Nam
                     </span>
                   </li>
                 </ul>
@@ -113,8 +119,8 @@ export default function Events() {
                       style={{ paddingRight: 4 }}
                     />
                     <span>
-                      25 Trần Hưng Đạo, TDP Nam Cao, TT Vĩnh Trụ, Huyện Lý Nhân,
-                      Tỉnh Hà Nam
+                      25 Trần Hưng Đạo, TDP Nam Cao, TT Vĩnh Trụ, Lý Nhân, Hà
+                      Nam
                     </span>
                   </li>
                 </ul>
